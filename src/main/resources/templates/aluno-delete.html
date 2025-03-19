@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>UEG - Desenvolvimento Web 2025: Aluno</title>
+</head>
+
+<body>
+    <h1>Excluir Aluno</h1>
+    <p>
+        <strong>Tem Certeza que deseja excluir o aluno?</strong>
+    </p>
+    
+    <form action="/alunos/delete" method="post">
+        <input type="hidden" name="id" th:value="${id}">
+        <label>Nome: </label>
+        <input type="text" name="nome" th:value="${aluno.nome}" disabled>
+
+        <label>Email</label>
+        <input type="text" name="email" th:value="${aluno.email}" disabled>
+
+        <button>Excluir</button>
+    </form>
+</body>
+
+</html>

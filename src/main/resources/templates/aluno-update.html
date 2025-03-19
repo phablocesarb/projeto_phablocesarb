@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>UEG - Desenvolvimento Web 2025: Aluno</title>
+</head>
+
+<body>
+    <h1>Atualização Cadastro de Aluno</h1>
+
+    <div class="container">
+        <div class="section">
+            <form action="/alunos/update" method="post">
+                <input type="hidden" name="id" th:value="${id}">
+                <label>Nome: </label>
+                <input type="text" name="nome" th:value="${aluno.nome}">
+
+                <label>Email</label>
+                <input type="text" name="email" th:value="${aluno.email}">
+
+                <button>Salvar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
