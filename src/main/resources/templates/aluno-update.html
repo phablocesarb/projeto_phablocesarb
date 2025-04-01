@@ -3,22 +3,35 @@
 
 <head>
     <title>UEG - Desenvolvimento Web 2025: Aluno</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+>
 </head>
 
 <body>
-    <h1>Atualização Cadastro de Aluno</h1>
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <h1 class="header center orange-text">Atualização Cadastro de Aluno</h1>
+        </div>
+    </div>
 
     <div class="container">
         <div class="section">
             <form action="/alunos/update" method="post">
-                <input type="hidden" name="id" th:value="${id}">
-                <label>Nome: </label>
-                <input type="text" name="nome" th:value="${aluno.nome}">
+                <div class="input-field col m6 s12">
+                    <input type="hidden" name="id" th:value="${id}">
+                    <label>Nome: </label>
+                    <input type="text" name="nome" th:value="${aluno.nome}">
+                </div>
 
-                <label>Email</label>
-                <input type="text" name="email" th:value="${aluno.email}">
+                <div class="input-field col m6 s12">
 
-                <button>Salvar</button>
+                    <label>Email</label>
+                    <input type="text" name="email" th:value="${aluno.email}">
+                </div>
+
+                <button class="waves-effect waves-light btn-large">Salvar</button>
             </form>
         </div>
     </div>
