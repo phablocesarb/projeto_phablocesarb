@@ -26,6 +26,12 @@
                 <li><a href="/alunos/create">Novo Aluno</a></li>
             </ul>
 
+            <br>
+            <form action="/alunos/busca" method="get">
+                <input type="text" name="nome" placeholder="Nome do Aluno">
+                <button class="waves-effect waves-light btn-small">Buscar</button>
+            </form>
+
             <table class="table">
                 <tr>
                     <th>Nome</th>
@@ -43,10 +49,10 @@
                     <td>
                         <ul>
                             <li>
-                                <a  class="waves-effect waves-light btn-small" th:href="@{'/alunos/update/' + ${iter.index}}">Atualizar</a>
+                                <a  class="waves-effect waves-light btn-small" th:href="@{'/alunos/update/' + ${aluno.id}}">Atualizar</a>
                             </li>
                             <li>
-                                <a  class="waves-effect waves-light btn-small red" th:href="@{'/alunos/delete/' + ${iter.index}}">Excluir</a>
+                                <a  class="waves-effect waves-light btn-small red" th:href="@{'/alunos/delete/' + ${aluno.id}}">Excluir</a>
                             </li>
                         </ul>
                     </td>
