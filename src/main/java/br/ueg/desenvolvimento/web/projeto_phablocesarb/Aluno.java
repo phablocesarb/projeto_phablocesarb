@@ -1,9 +1,14 @@
 package br.ueg.desenvolvimento.web.projeto_phablocesarb;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Aluno {
@@ -14,6 +19,29 @@ public class Aluno {
 
     private String nome;
     private String email;
+    
+    @OneToMany(mappedBy = "aluno", cascade = CascadeType.ALL)
+    private List<TelefoneAluno> telefones;
+
+    @ManyToMany
+    private List<Disciplina> disciplinas;
+
+
+    public List<TelefoneAluno> getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(List<TelefoneAluno> telefones) {
+        this.telefones = telefones;
+    }
+
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
+    }
+
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
+    }
 
     public Aluno() {
 
