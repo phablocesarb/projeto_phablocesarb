@@ -67,12 +67,13 @@ public class AlunoController {
     public String postUpdate(@RequestParam int id,
             @RequestParam String nome,
             @RequestParam String email,
-            @RequestParam List<Integer> disciplinas) {
+            @RequestParam(required=false) List<Integer> disciplinas) {
         // alunos.set(id, Map.of("nome", nome, "email", email));
         Aluno aluno = alunoRepository.findById(id).get();
         aluno.setNome(nome);
         aluno.setEmail(email);
         List<Disciplina> disciplinasBd = new ArrayList<>();
+        if(disciplinas != null)
         for (Integer discId : disciplinas) {
             Disciplina disciplinaBd = disciplinaRepository.findById(discId).get();
             disciplinasBd.add(disciplinaBd);
